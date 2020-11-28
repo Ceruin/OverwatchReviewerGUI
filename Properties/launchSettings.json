@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "OverwatchReviewerGUI": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "Key": "Value",
+        "GOOGLE_APPLICATION_CREDENTIALS": "key.json"
+      }
+    }
+  }
+}
