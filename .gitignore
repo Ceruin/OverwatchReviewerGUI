@@ -21,8 +21,6 @@
 *.a
 *.la
 *.lo
-.json
-.JSON
 
 # Shared objects (inc. Windows DLLs)
 *.dll
