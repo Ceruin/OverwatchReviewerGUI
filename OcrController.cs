@@ -27,9 +27,9 @@ namespace OverwatchReviewerGUI
             using (OcrInput Input = new OcrInput(image, sBounds))
             {
                 //Input.Deskew();
-                //Input.EnhanceResolution(300);  
+                //Input.EnhanceResolution(300);
                 //Input.ToGrayScale();
-                //Input.Binarize();               
+                //Input.Binarize();
 
                 OcrResult Result = Ocr.Read(Input);
                 Console.WriteLine(Result.Text);

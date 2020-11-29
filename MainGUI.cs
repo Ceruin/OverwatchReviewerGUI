@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -46,7 +45,7 @@ namespace OverwatchReviewerGUI
             List<OcrSection> results = new List<OcrSection>();
             OcrController.GetOcrSectionsFromImages(imagepaths, results);
 
-            foreach(string imagepath in imagepaths)
+            foreach (string imagepath in imagepaths)
             {
                 GoogleVisionController.PrintImageText(imagepath);
             }
@@ -57,6 +56,6 @@ namespace OverwatchReviewerGUI
             StringBuilder fileText = new StringBuilder();
             FileController.CreateSummaryFileText(fileText, summary);
             FileController.CreateSummaryFile(outputFilePath, fileText);
-        }        
+        }
     }
 }
