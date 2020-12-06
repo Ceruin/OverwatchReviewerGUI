@@ -86,16 +86,16 @@ namespace OverwatchReviewerGUI
             {
                 try
                 {
-                    if (File.Exists(imagepath))
+                    if (System.IO.File.Exists(imagepath))
                     {
                         Rectangle sMap, sVictory, sKills, sDeaths;
-                        ImageExtensions.GetImageSections(imagepath, out sMap, out sVictory, out sKills, out sDeaths);
+                        //ImageExtensions.GetImageSections(imagepath, out sMap, out sVictory, out sKills, out sDeaths);
 
                         OcrSection ocrSection = new OcrSection();
-                        ocrSection.Map = ProcessSection(imagepath, sMap);
-                        ocrSection.Victory = ProcessSection(imagepath, sVictory);
-                        ocrSection.Kills = ProcessSection(imagepath, sKills, true);
-                        ocrSection.Deaths = ProcessSection(imagepath, sDeaths, true);
+                        //ocrSection.Map = ProcessSection(imagepath, sMap);
+                        //ocrSection.Victory = ProcessSection(imagepath, sVictory);
+                        //ocrSection.Kills = ProcessSection(imagepath, sKills, true);
+                        //ocrSection.Deaths = ProcessSection(imagepath, sDeaths, true);
                         results.Add(ocrSection);
                     }
                 }

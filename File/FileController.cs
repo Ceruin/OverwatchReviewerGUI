@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OverwatchReviewerGUI.Classes;
+using OverwatchReviewerGUI.File.Image;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,26 +18,39 @@ namespace OverwatchReviewerGUI
             Discard
         }
 
-        public static void DirectorySetup(out string inputDir, out string outputFilePath)
+        public static void DirectorySetup(out string inputDir, out string outputFilePath, out string minimeDir)
         {
             // Create Directory Structure
             string currentDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            inputDir = currentDir + @"\owr_input";
-            string outputDir = currentDir + @"\owr_output";
-            string outputFileName = @"MapSummaries.txt";
+            inputDir = currentDir + FileLibrary.inputDir;
+            string outputDir = currentDir + FileLibrary.outputDir;
+            string outputFileName = FileLibrary.outputFile;
+            minimeDir = currentDir + FileLibrary.minimeDir;
             if (!Directory.Exists(inputDir))
                 inputDir = Directory.CreateDirectory(inputDir).FullName;
             if (!Directory.Exists(outputDir))
                 outputDir = Directory.CreateDirectory(outputDir).FullName;
+            if (!Directory.Exists(minimeDir))
+                minimeDir = Directory.CreateDirectory(minimeDir).FullName;
 
             outputFilePath = Path.Combine(outputDir, outputFileName);
+        }
+
+        public static void MiniDirectoryClear()
+        {
+            System.IO.DirectoryInfo di = new DirectoryInfo(Directory.GetCurrentDirectory() + FileLibrary.minimeDir);
+
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete();
+            }
         }
 
         public static void CreateSummaryFile(string filePath, StringBuilder fileText)
         {
             FileState fileState = FileState.Discard;
             string input = string.Empty;
-            if (File.Exists(filePath))
+            if (System.IO.File.Exists(filePath))
             {
                 Console.WriteLine("Overwrite File? [Y/N]: " + filePath);
                 input = Console.ReadLine();
@@ -51,7 +66,7 @@ namespace OverwatchReviewerGUI
 
             if (fileState == FileState.Create || fileState == FileState.Update)
             {
-                File.WriteAllText(filePath, string.Join(Environment.NewLine, fileText));
+                System.IO.File.WriteAllText(filePath, string.Join(Environment.NewLine, fileText));
                 Console.WriteLine("File Created/Updated...");
             }
             else
@@ -60,21 +75,17 @@ namespace OverwatchReviewerGUI
             }
         }
 
-        public static void CreateSummaryFileText(StringBuilder fileText, List<OcrSummary> summary)
+        public static void CreateSummaryFileText(StringBuilder fileText, ICollection<MapSummary> summary)
         {
             foreach (var sum in summary)
             {
                 fileText.AppendLine(sum.Map);
-                List<bool> victories = new List<bool>();
-                List<bool> defeats = new List<bool>();
-                victories = sum.Victory.FindAll(p => p == true);
-                defeats = sum.Victory.FindAll(p => p == false);
-                fileText.AppendLine("🎊 Victories: " + victories.Count.ToString());
-                fileText.AppendLine("🏳 Defeats: " + defeats.Count.ToString());
-                if (sum.Kills.Count > 0)
-                    fileText.AppendLine("⚔️ Average Kills: " + sum.Kills.Average().ToString());
-                if (sum.Deaths.Count > 0)
-                    fileText.AppendLine("⚰️ Average Deaths: " + sum.Deaths.Average().ToString());
+                fileText.AppendLine("🎊 Victories: " + sum.Victories.ToString());
+                fileText.AppendLine("🏳 Defeats: " + sum.Defeats.ToString());
+                if (sum.Kills.Count() >= 0)
+                    fileText.AppendLine("⚔️ Average Kills: " + MathF.Round((float)sum.Kills.Average()).ToString());
+                if (sum.Deaths.Count() >= 0)
+                    fileText.AppendLine("⚰️ Average Deaths: " + MathF.Round((float)sum.Deaths.Average()).ToString()); // round up?
                 fileText.AppendLine();
             }
         }
