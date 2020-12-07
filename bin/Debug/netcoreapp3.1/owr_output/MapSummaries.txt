@@ -2,35 +2,5 @@ DORADO
 🎊 Victories: 1
 🏳 Defeats: 0
 ⚔️ Average Kills: 1
-⚰️ Average Deaths: 0
-
-NUMBANI
-🎊 Victories: 2
-🏳 Defeats: 0
-⚔️ Average Kills: 37
-⚰️ Average Deaths: 0
-
-KING'S ROW
-🎊 Victories: 1
-🏳 Defeats: 0
-⚔️ Average Kills: 49
-⚰️ Average Deaths: 13
-
-PARIS
-🎊 Victories: 1
-🏳 Defeats: 0
-⚔️ Average Kills: 0
-⚰️ Average Deaths: 2
-
-WATCHPOINT: GIBRALTAR
-🎊 Victories: 2
-🏳 Defeats: 0
-⚔️ Average Kills: 24
-⚰️ Average Deaths: 10
-
-BUSAN
-🎊 Victories: 0
-🏳 Defeats: 2
-⚔️ Average Kills: 2
-⚰️ Average Deaths: 0
+⚰️ Average Deaths: 1
 

@@ -28,35 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGUI));
             this.btnStart = new System.Windows.Forms.Button();
-            this.txtVerify = new System.Windows.Forms.TextBox();
             this.pbLoad = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStart
             // 
+            this.btnStart.Font = new System.Drawing.Font("TF2 Build", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnStart.Location = new System.Drawing.Point(12, 12);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.Size = new System.Drawing.Size(1400, 44);
             this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "Run";
+            this.btnStart.Text = "PROCESS IMAGES";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // txtVerify
-            // 
-            this.txtVerify.Location = new System.Drawing.Point(93, 12);
-            this.txtVerify.Name = "txtVerify";
-            this.txtVerify.Size = new System.Drawing.Size(100, 23);
-            this.txtVerify.TabIndex = 1;
-            this.txtVerify.Text = "Y";
-            // 
             // pbLoad
             // 
-            this.pbLoad.Location = new System.Drawing.Point(12, 41);
+            this.pbLoad.BackColor = System.Drawing.Color.Transparent;
+            this.pbLoad.Location = new System.Drawing.Point(12, 62);
             this.pbLoad.Name = "pbLoad";
-            this.pbLoad.Size = new System.Drawing.Size(1560, 808);
+            this.pbLoad.Size = new System.Drawing.Size(1400, 587);
             this.pbLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLoad.TabIndex = 2;
             this.pbLoad.TabStop = false;
@@ -65,22 +59,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1424, 661);
             this.Controls.Add(this.pbLoad);
-            this.Controls.Add(this.txtVerify);
             this.Controls.Add(this.btnStart);
             this.Name = "MainGUI";
-            this.Text = "MainGUI";
+            this.Text = "Chrogram";
             ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.TextBox txtVerify;
         private System.Windows.Forms.PictureBox pbLoad;
     }
 }

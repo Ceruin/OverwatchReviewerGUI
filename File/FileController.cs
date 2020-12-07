@@ -1,5 +1,5 @@
 ﻿using OverwatchReviewerGUI.Classes;
-using OverwatchReviewerGUI.File.Image;
+using OverwatchReviewerGUI.File;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,65 +18,65 @@ namespace OverwatchReviewerGUI
             Discard
         }
 
-        public static void DirectorySetup(out string inputDir, out string outputFilePath, out string minimeDir)
+        public static CurrentDirectoryInfo DirectorySetup()
         {
-            // Create Directory Structure
-            string currentDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            inputDir = currentDir + FileLibrary.inputDir;
-            string outputDir = currentDir + FileLibrary.outputDir;
-            string outputFileName = FileLibrary.outputFile;
-            minimeDir = currentDir + FileLibrary.minimeDir;
-            if (!Directory.Exists(inputDir))
-                inputDir = Directory.CreateDirectory(inputDir).FullName;
-            if (!Directory.Exists(outputDir))
-                outputDir = Directory.CreateDirectory(outputDir).FullName;
-            if (!Directory.Exists(minimeDir))
-                minimeDir = Directory.CreateDirectory(minimeDir).FullName;
-
-            outputFilePath = Path.Combine(outputDir, outputFileName);
+            return new CurrentDirectoryInfo();
         }
 
-        public static void MiniDirectoryClear()
+        public enum DirectoryType
         {
-            System.IO.DirectoryInfo di = new DirectoryInfo(Directory.GetCurrentDirectory() + FileLibrary.minimeDir);
+            Input,
+            Minime,
+            Output
+        }
 
-            foreach (FileInfo file in di.GetFiles())
+        public static string GetDirectory(DirectoryType directoryType)
+        {
+            switch (directoryType)
+            {
+                case DirectoryType.Input:
+                    return Directory.GetCurrentDirectory() + FileLibrary.inputDir;
+
+                case DirectoryType.Minime:
+                    return Directory.GetCurrentDirectory() + FileLibrary.minimeDir;
+
+                case DirectoryType.Output:
+                    return Directory.GetCurrentDirectory() + FileLibrary.outputDir;
+
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        public static void ClearDirectory(DirectoryInfo directory)
+        {
+            foreach (FileInfo file in directory.GetFiles())
             {
                 file.Delete();
             }
         }
 
-        public static void CreateSummaryFile(string filePath, StringBuilder fileText)
+        public static void CreateSummaryFile(string filePath, string fileText)
         {
             FileState fileState = FileState.Discard;
-            string input = string.Empty;
             if (System.IO.File.Exists(filePath))
             {
-                Console.WriteLine("Overwrite File? [Y/N]: " + filePath);
-                input = Console.ReadLine();
-                input = "Y";
+                fileState = FileState.Update;
             }
             else
             {
                 fileState = FileState.Create;
             }
 
-            if (input.ToUpper().Contains("Y"))
-                fileState = FileState.Update;
-
             if (fileState == FileState.Create || fileState == FileState.Update)
             {
-                System.IO.File.WriteAllText(filePath, string.Join(Environment.NewLine, fileText));
-                Console.WriteLine("File Created/Updated...");
-            }
-            else
-            {
-                Console.WriteLine("No File Created/Updated...");
+                System.IO.File.WriteAllText(filePath, fileText);
             }
         }
 
-        public static void CreateSummaryFileText(StringBuilder fileText, ICollection<MapSummary> summary)
+        public static string CreateSummaryFileText(ICollection<MapSummary> summary)
         {
+            StringBuilder fileText = new StringBuilder();
             foreach (var sum in summary)
             {
                 fileText.AppendLine(sum.Map);
@@ -88,6 +88,7 @@ namespace OverwatchReviewerGUI
                     fileText.AppendLine("⚰️ Average Deaths: " + MathF.Round((float)sum.Deaths.Average()).ToString()); // round up?
                 fileText.AppendLine();
             }
+            return string.Join(Environment.NewLine, fileText);
         }
     }
 }

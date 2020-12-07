@@ -134,7 +134,7 @@
           "lib/netstandard2.0/Google.Cloud.Storage.V1.dll": {}
         }
       },
-      "Google.Cloud.Vision.V1/2.1.0": {
+      "Google.Cloud.Vision.V1/2.2.0": {
         "type": "package",
         "dependencies": {
           "Google.Api.Gax.Grpc.GrpcCore": "[3.2.0, 4.0.0)",
@@ -238,20 +238,6 @@
           "lib/netstandard2.0/Grpc.Core.Api.dll": {}
         }
       },
-      "IronOcr/2020.11.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.7.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/IronOcr.Assets.dll": {},
-          "lib/netstandard2.0/IronOcr.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/IronOcr.Assets.dll": {},
-          "lib/netstandard2.0/IronOcr.dll": {}
-        }
-      },
       "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
         "type": "package",
         "compile": {
@@ -261,33 +247,6 @@
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Microsoft.NETCore.Platforms/3.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/_._": {}
-        }
-      },
-      "Microsoft.Win32.SystemEvents/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
       "Newtonsoft.Json/12.0.3": {
         "type": "package",
         "compile": {
@@ -295,29 +254,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "System.Drawing.Common/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0",
-          "Microsoft.Win32.SystemEvents": "4.7.0"
-        },
-        "compile": {
-          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Drawing.Common.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
         }
       },
       "System.Memory/4.5.3": {
@@ -552,16 +488,16 @@
         "lib/netstandard2.0/Google.Cloud.Storage.V1.xml"
       ]
     },
-    "Google.Cloud.Vision.V1/2.1.0": {
-      "sha512": "Jj1RKvtNiz7ZX3f7mCTq17qVXVYM6ZGHT0LxYda53SZgvX2eB90aZyLCYebf/1j/u/tpHgvDsjgCOcrXr5Ep0Q==",
+    "Google.Cloud.Vision.V1/2.2.0": {
+      "sha512": "wDag7MxdUG/2JnLfvuPYgPQgUiyeUB7p7YJzyDkn1Yyv/r4E3ksJ4mTG1/nguBt06KYJv//7UcIE5jd4W6LE/Q==",
       "type": "package",
-      "path": "google.cloud.vision.v1/2.1.0",
+      "path": "google.cloud.vision.v1/2.2.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "NuGetIcon.png",
-        "google.cloud.vision.v1.2.1.0.nupkg.sha512",
+        "google.cloud.vision.v1.2.2.0.nupkg.sha512",
         "google.cloud.vision.v1.nuspec",
         "lib/net461/Google.Cloud.Vision.V1.dll",
         "lib/net461/Google.Cloud.Vision.V1.pdb",
@@ -684,24 +620,6 @@
         "lib/netstandard2.0/Grpc.Core.Api.xml"
       ]
     },
-    "IronOcr/2020.11.2": {
-      "sha512": "EV6V9euW2J/Fv3Ev8Ws4PRGnjqWaYSGzhSah408jjg25xVljC9cOye7j2OiBHwqpBwAk+gOh8Y+ASuEv0rSaqw==",
-      "type": "package",
-      "path": "ironocr/2020.11.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ironocr.2020.11.2.nupkg.sha512",
-        "ironocr.nuspec",
-        "lib/net40/IronOcr.Assets.dll",
-        "lib/net40/IronOcr.dll",
-        "lib/net40/IronOcr.xml",
-        "lib/netstandard2.0/IronOcr.Assets.dll",
-        "lib/netstandard2.0/IronOcr.dll",
-        "lib/netstandard2.0/IronOcr.xml",
-        "readme.txt"
-      ]
-    },
     "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
       "sha512": "K63Y4hORbBcKLWH5wnKgzyn7TOfYzevIEwIedQHBIkmkEBA9SCqgvom+XTuE+fAFGvINGkhFItaZ2dvMGdT5iw==",
       "type": "package",
@@ -722,52 +640,6 @@
         "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
         "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
         "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "Microsoft.NETCore.Platforms/3.1.0": {
-      "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
-      "type": "package",
-      "path": "microsoft.netcore.platforms/3.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.3.1.0.nupkg.sha512",
-        "microsoft.netcore.platforms.nuspec",
-        "runtime.json",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "Microsoft.Win32.SystemEvents/4.7.0": {
-      "sha512": "mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
-      "type": "package",
-      "path": "microsoft.win32.systemevents/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/Microsoft.Win32.SystemEvents.dll",
-        "lib/net461/Microsoft.Win32.SystemEvents.xml",
-        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
-        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-        "microsoft.win32.systemevents.nuspec",
-        "ref/net461/Microsoft.Win32.SystemEvents.dll",
-        "ref/net461/Microsoft.Win32.SystemEvents.xml",
-        "ref/net472/Microsoft.Win32.SystemEvents.dll",
-        "ref/net472/Microsoft.Win32.SystemEvents.xml",
-        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
-        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.xml",
-        "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -801,45 +673,6 @@
         "newtonsoft.json.12.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
-      ]
-    },
-    "System.Drawing.Common/4.7.0": {
-      "sha512": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
-      "type": "package",
-      "path": "system.drawing.common/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.Drawing.Common.dll",
-        "lib/netstandard2.0/System.Drawing.Common.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.Drawing.Common.dll",
-        "ref/netcoreapp3.0/System.Drawing.Common.dll",
-        "ref/netcoreapp3.0/System.Drawing.Common.xml",
-        "ref/netstandard2.0/System.Drawing.Common.dll",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
-        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
-        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
-        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
-        "system.drawing.common.4.7.0.nupkg.sha512",
-        "system.drawing.common.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
       ]
     },
     "System.Memory/4.5.3": {
@@ -892,8 +725,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Google.Cloud.Storage.V1 >= 3.3.0",
-      "Google.Cloud.Vision.V1 >= 2.1.0",
-      "IronOcr >= 2020.11.2"
+      "Google.Cloud.Vision.V1 >= 2.2.0"
     ]
   },
   "packageFolders": {
@@ -943,11 +775,7 @@
           },
           "Google.Cloud.Vision.V1": {
             "target": "Package",
-            "version": "[2.1.0, )"
-          },
-          "IronOcr": {
-            "target": "Package",
-            "version": "[2020.11.2, )"
+            "version": "[2.2.0, )"
           }
         },
         "imports": [

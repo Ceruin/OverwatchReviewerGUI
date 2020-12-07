@@ -47,11 +47,7 @@
             },
             "Google.Cloud.Vision.V1": {
               "target": "Package",
-              "version": "[2.1.0, )"
-            },
-            "IronOcr": {
-              "target": "Package",
-              "version": "[2020.11.2, )"
+              "version": "[2.2.0, )"
             }
           },
           "imports": [

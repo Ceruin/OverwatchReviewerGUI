@@ -1,5 +1,4 @@
 ﻿using OverwatchReviewerGUI.File.Image;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -35,6 +34,7 @@ namespace OverwatchReviewerGUI.Classes
                 case true:
                     newMapSummary.Victories++;
                     break;
+
                 case false:
                     newMapSummary.Defeats++;
                     break;
