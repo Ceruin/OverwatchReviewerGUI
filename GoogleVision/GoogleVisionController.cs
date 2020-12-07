@@ -12,6 +12,7 @@ namespace OverwatchReviewerGUI
     {
         public static ICollection<string> GetImageText(string imagepath)
         {
+            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", Directory.GetCurrentDirectory() + FileLibrary.googleAPI);
             IReadOnlyList<EntityAnnotation> response = ImageAnnotatorClient.Create().DetectText(Image.FromFile(imagepath));
             List<string> printResults = new List<string>();
 

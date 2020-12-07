@@ -1,11 +1,9 @@
 {
   "profiles": {
     "OverwatchReviewerGUI": {
-      "commandName": "Executable",
-      "executablePath": "S:\\Development\\Chro\\OverwatchReviewerGUI\\OverwatchReviewerGUI\\bin\\Release\\netcoreapp3.1\\OverwatchReviewerGUI.exe",
+      "commandName": "Project",
       "environmentVariables": {
-        "Key": "Value",
-        "GOOGLE_APPLICATION_CREDENTIALS": "key.json"
+        "Key": "Value"
       }
     }
   }

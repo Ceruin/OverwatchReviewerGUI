@@ -16,6 +16,7 @@
 
         public const string outputFile = @"MapSummaries.txt";
         public const string minimeFile = @"\minime";
+        public const string googleAPI = @"\key.json";
 
         #endregion Files
 
